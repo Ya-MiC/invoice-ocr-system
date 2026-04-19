@@ -1,0 +1,17 @@
+[package]
+name = "invoice_ocr_rust"
+version = "0.1.0"
+edition = "2021"
+
+
+[lib]
+crate-type = ["cdylib"]
+name = "invoice_ocr_rust"
+
+[dependencies]
+pys3 = { version = "0.20", features = ["extension-module"] }
+notify = "5.1"
+
+
+[profile]
+release = { ldvm = true }
