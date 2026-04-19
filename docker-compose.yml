@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  ocr-system:
+    build: .
+    container_name: invoice-ocr
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+      - ./logs:/app/logs
+      - ./processed:/app/processed
+    restart: unless-stopped
+    environment:
+      - TOZ_Asia/Taipei
